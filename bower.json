@@ -1,0 +1,29 @@
+{
+  "name": "communityjs-tn",
+  "version": "0.0.0",
+  "homepage": "https://github.com/communityjs-tn/communityjs-tn.github.io",
+  "authors": [
+    "Anis Bouhachem <anis.bouhachem@yahoo.com>"
+  ],
+  "description": "CommunityJs blog website.",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
