@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog - Tunisian Communityjs-tn</title>
+    <!-- @if NODE_ENV == 'DEV' -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- @endif -->
+    <!-- @if NODE_ENV == 'PROD' -->
+    <!-- build:css vendors.min.css -->
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbuild -->
+    <!-- @endif -->
+    <link rel="stylesheet" ng-href="css/{{page}}.css">
+
+</head>
+<body>
+    <ng-view></ng-view>
+
+    <!-- @if NODE_ENV == 'DEV' -->
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <!-- @endif -->
+    <!-- @if NODE_ENV == 'PROD' -->
+    <!-- build:js vendors.min.js -->
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <script src="vendors/requirejs/require.js"></script>
+    <!-- endbuild -->
+    <!-- @endif -->
+    <script>
+        require && require(['main']);
+    </script>
+
+</body>
+</html>

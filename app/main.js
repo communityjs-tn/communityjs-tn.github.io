@@ -13,17 +13,17 @@ define([], function () {
                 .when('/', {
                     templateUrl: viewsPath + '/cover.html',
                     resolve: {
-                        load: function($rootScope) {
+                        load: ["$rootScope", function($rootScope) {
                             $rootScope.page = 'cover';
-                        }
+                        }]
                     }
                 })
                 .when('/blog', {
                     templateUrl: viewsPath + '/blog.html',
                     resolve: {
-                        load: function($rootScope) {
+                        load: ["$rootScope", function($rootScope) {
                             $rootScope.page = 'blog';
-                        }
+                        }]
                     }
                 });
 
