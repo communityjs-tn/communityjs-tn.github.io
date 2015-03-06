@@ -65,12 +65,25 @@ module.exports = function(grunt) {
                 dest: globals.distDir + '/vendors.min.js'
             }
         },
+        uglify: {
+            dist: {
+                files: [{
+                    src: [globals.distDir + '/vendors.min.js'],
+                    dest: globals.distDir + '/vendors.min.js'
+                }]
+            }
+        },
         cssmin: {
             dist: {
                 files: [{
-                    cwd: globals.appDir,
-                    src: ['vendors/bootstrap/dist/css/bootstrap.css'],
+                    src: [globals.distDir + '/vendors/bootstrap/dist/css/bootstrap.css'],
                     dest: globals.distDir + '/vendors.min.css'
+                }, {
+                    src: [globals.distDir + '/css/cover.css'],
+                    dest: globals.distDir + '/css/cover.css'
+                }, {
+                    src: [globals.distDir + '/css/blog.css'],
+                    dest: globals.distDir + '/css/blog.css'
                 }]
             }
         },
@@ -87,17 +100,16 @@ module.exports = function(grunt) {
 
     });
 
-    // Dependencies
-    //grunt.loadNpmTasks( 'grunt-contrib-watch' );
-    //grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-    //grunt.loadNpmTasks( 'grunt-autoprefixer' );
-
-
-    //grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-
-    //grunt.loadNpmTasks( 'grunt-jsdoc' );
-    grunt.loadNpmTasks( 'grunt-wiredep' );
-
-    grunt.registerTask("dist", ["copy", "env:prod", "preprocess", "wiredep", "useminPrepare", "concat", "cssmin", "usemin", "clean"]);
+    grunt.registerTask("dist", [
+        "copy",
+        "env:prod",
+        "preprocess",
+        "wiredep",
+        "useminPrepare",
+        "concat",
+        "uglify",
+        "cssmin",
+        "usemin"
+    ]);
 
 };
