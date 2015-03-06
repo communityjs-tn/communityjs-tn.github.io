@@ -1,2 +1,18 @@
-<title>Community js</title>
-<h1>Community js page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog - Tunisian Communityjs-tn</title>
+    <link rel="stylesheet" href="vendors.min.css">
+    <link rel="stylesheet" ng-href="css/{{page}}.css">
+
+</head>
+<body>
+    <ng-view></ng-view>
+
+    <script src="vendors.min.js"></script>
+    <script>
+        require && require(['main']);
+    </script>
+
+</body>
+</html>
